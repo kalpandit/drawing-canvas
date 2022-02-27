@@ -6,62 +6,57 @@
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.min.js"></script>
   <link href="style.css" rel="stylesheet">
-  <title>Draw</title>
+  <link rel="stylesheet" href="https://use.typekit.net/arr3flf.css">
   <script src="scripts.js"></script>
 </head>
-<body class="l bg-gray-100" style="width: 100%; height: 100%;">
-  <div class="absolute bottom-2 bg-black ml-3 rounded" onClick="zeroStroke()">
-    <button id="hamburger" onClick="" type="button" class="md:h-full inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-500" aria-controls="mobile-menu" aria-expanded="false">
-      <span class="sr-only">Open main menu</span>
-      <svg class="toggle block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-      <svg class="toggle hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </button>
-  </div>
-  <div class="toggle absolute bottom-2 overflow-x-auto">
+<body class="">
+  <nav class="flex p-3 px-4 bg-gray-900">
+    <a href="https://github.com/kalpandit" class="flex items-center text-white">
+      <svg class="fill-current h-6 w-6 mr-3" width="50" height="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26"><defs><style>.cls-1{fill:none;stroke:#fff;stroke-width:2px;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><g id="Layer_1-3" data-name="Layer 1"><path class="cls-1" d="M8,13H20m-7,5.7L7.3,13,13,7.3"/><path class="cls-1" d="M13,1A12,12,0,1,0,25,13,12,12,0,0,0,13,1Z"/></g></g></g></svg>
+      <span class="font-normal hover:underline text-lg text-white adelle">Back to GitHub</span>
+    </a>
+    </div>
+  </nav>
 
-  </div>
-     <div class="toggle hidden absolute items-center content-center bottom-0 bg-gray-300 h-36 left-1/2 top-0 transform -translate-x-1/2 w-full 2xl:mt-3 2xl:w-6/12 shadow-xl">
-      <div class="menu select-none py-3 pb-3 text-center items-center justify-center">
-        <div class="py-3 px-3 text-center items-center justify-center">
-          <button onClick="redTool()" class="bg-red-800 hover:bg-red-600 text-white font-bold h-10 w-10 rounded-full mr-1  shadow-xl">
-          
+    <div class="menu select-none py-3 pb-3 px-3 text-center items-center justify-center">
+        <h2 class="text-4xl font-bold text-white text-center pt-3">The Drawing Tool</h2>
+        <h4 class="text-xl font-normal text-white text-center p-3">Use the buttons below to create your masterpiece.</h2>
+        <div class="py-3 text-center items-center justify-center">
+          <button onClick="redTool()" class="bg-red-800 hover:bg-red-600 text-white font-bold py-2 px-4 rounded shadow">
+          Red
         </button>
-        <button onClick="orangeTool()" class="bg-yellow-600 hover:bg-yellow-500 text-white font-bold h-10 w-10 rounded-full mr-1  shadow-xl">
-            
+        <button onClick="orangeTool()" class="bg-yellow-600 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded shadow">
+            Orange
           </button>
-          <button onClick="yellowTool()" class="bg-yellow-300 hover:bg-yellow-200 text-black font-bold h-10 w-10 rounded-full  mr-1 shadow-xl">
-            
+          <button onClick="yellowTool()" class="bg-yellow-300 hover:bg-yellow-200 text-black font-bold py-2 px-4 rounded shadow">
+            Yellow
           </button>
-          <button onClick="greenTool()" class="bg-green-600 hover:bg-green-500 text-white font-bold h-10 w-10 rounded-full mr-1 shadow-xl">
-            
+          <button onClick="greenTool()" class="bg-green-600 hover:bg-green-500 text-white font-bold py-2 px-4 rounded shadow">
+            Green
           </button>
-          <button onClick="blueTool()" class="bg-blue-600 hover:bg-blue-500 text-white font-bold h-10 w-10 rounded-full  mr-1 shadow-xl">
-            
+          <button onClick="blueTool()" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded shadow">
+            Blue
           </button>
-          <button onClick="purpleTool()" class="bg-purple-700 hover:bg-purple-500 text-white font-bold h-10 w-10 rounded-full mr-1 shadow-xl">
-            
+          <button onClick="purpleTool()" class="bg-purple-700 hover:bg-purple-500 text-white font-bold py-2 px-4 rounded shadow">
+            Purple
           </button>
-          <button onClick="resetTool()" class="bg-black hover:bg-gray-700 text-white font-bold h-10 w-10 rounded-full  mr-1 shadow-xl">
-            
+          <button onClick="resetTool()" class="bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded shadow">
+            Black
           </button>
-          <button onClick="eraserTool()" class="bg-white hover:bg-gray-200 text-black font-bold h-10 w-10 rounded-full shadow-xl">
-            
+          <button onClick="eraserTool()" class="bg-white hover:bg-gray-200 text-black font-bold py-2 px-4 rounded shadow">
+            White
           </button>
 
       </div>
       <div class="pt-1 pb-3">
-        <button onClick="setup()" class=" bg-pink-700 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded shadow">
+        <button onClick="setup()" class="bg-gray-300 hover:bg-gray-200 text-black font-bold py-2 px-4 rounded shadow-m">
           Reset
         </button>
       <button onClick="download()" class="bg-gray-600 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded shadow">
           Download          
       </button>
         <div class="inline-block relative w-29 pl-1">
-       <select onChange="changeSize()" id="size" class="block text-mono h-10 appearance-none w-29 bg-white hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight font-sans shadow">
+       <select onChange="changeSize()" id="size" class="block text-mono h-10 appearance-none w-29 bg-white  hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight font-sans shadow">
          <option value="3">Tiny brush</option>
          <option value="7">Medium brush</option>
          <option value="14">Large brush</option>
@@ -73,14 +68,7 @@
        </div>
      </div>
    </div>
-   </div>
-   <script>
-    document.getElementById("hamburger").onclick = function toggleMenu() {
-const navToggle = document.getElementsByClassName("toggle");
-for (let i = 0; i < navToggle.length; i++) {
-  navToggle.item(i).classList.toggle("hidden");
-}
-};
-  </script>
+      <script>
+      </script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+// Camera function forked from https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Taking_still_photos
 var Col = {};
 var Media = {};
 
@@ -5,12 +6,27 @@ function touchMoved() {
     return false;
   }
 function setup() {
-  var width = window.innerWidth;
-var height = window.innerHeight;
-  createCanvas(width, height);
+    if (window.matchMedia("(max-width: 400px)").matches) {
+      Media.width = 350;
+        createCanvas(350, 350);
+    }
+    else if (window.matchMedia("(max-width: 500px)").matches) {
+      Media.width = 480;
+        createCanvas(480, 480);
+    }
+    else if (window.matchMedia("(max-width: 700px)").matches) {
+      Media.width = 650;
+        createCanvas(650,650);
+    }
+    else {
+      Media.width = 720;
+        createCanvas(720,720);
+    }
+
   background('#ffffff');
   Col.color = 'black';
-  if (Col.weight != 0) changeSize();
+  Col.weight = 7;
+  changeSize();
 }
 function draw() {
   if (mouseIsPressed) {
@@ -66,19 +82,4 @@ function download() {
    link.download = 'masterpiece.png';
    link.href = down;
    link.click();
-}
-function zeroStroke() {
-  console.log("0");
-
-  if (Col.weight != 0) {
-    Col.weight = 0;
-    tool(Col.color);
-
-  }
-  else if (Col.weight == 0) {
-    var s = document.getElementById("size").value;
-    Col.weight = s;
-    tool(Col.color);
-
-  }
 }
